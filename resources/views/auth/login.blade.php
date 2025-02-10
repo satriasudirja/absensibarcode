@@ -1,7 +1,8 @@
 <x-guest-layout>
   <x-authentication-card>
     <x-slot name="logo">
-      <x-authentication-card-logo />
+    <img src="{{ asset('image/nagrak.jpg') }}" alt="Desa Nagrak" style="border-radius:100%; width:200px;"><br>
+
     </x-slot>
 
     <x-validation-errors class="mb-4" />
@@ -11,11 +12,12 @@
         {{ $value }}
       </div>
     @endsession
-
+    <h1 style="text-align:center; font-size:15px;  font-weight: bold; margin-bottom:50px;">Presensi Kehadiran Desa Nagrak Sukaraja</h1>
     <form method="POST" action="{{ route('login') }}">
       @csrf
-
+     
       <div>
+ 
         <x-label for="email" value="{{ __('Email or Phone') }}" />
         <x-input id="email" class="mt-1 block w-full" type="text" name="email" :value="old('email')" required
           autofocus autocomplete="username" />
@@ -35,11 +37,7 @@
       </div>
 
       <div class="mb-3 mt-4 flex items-center justify-end">
-        <a href="{{ route('register') }}">
-          <x-secondary-button class="ms-4" type="button">
-            {{ __('Register') }}
-          </x-secondary-button>
-        </a>
+   
 
         <x-button class="ms-4">
           {{ __('Log in') }}
